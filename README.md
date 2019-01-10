@@ -15,6 +15,6 @@ So I've decided to create my own brute-force tool :-).
 - shelljs (npm install shelljs)   
 
 ### Usage: 
-node LOGO_bf.js <LOGO IP> <passwords.txt>
+node LOGO_bf.js  <logo_ip> <pass_file>
   
 *no need for username as SIEMENS has static username ('Web User')
