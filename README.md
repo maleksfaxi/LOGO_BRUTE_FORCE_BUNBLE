@@ -1,5 +1,5 @@
-# LOGO_BF
-SIEMENS LOGO! Brute Force tool
+# SIEMENS LOGO! Brute Force tool
+![alt text](https://raw.githubusercontent.com/yossireuven/LOGO_BF/master/LOGO8.png)
 
 
 ### Motivation: 
