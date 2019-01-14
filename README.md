@@ -18,3 +18,7 @@ So I've decided to create my own brute-force tool :-).
 node LOGO_bf.js  <logo_ip> <pass_file>
   
 *no need for username as SIEMENS has static username ('Web User')
+
+
+
+#### - For educational and research purposes only.
