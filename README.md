@@ -1,6 +1,6 @@
 # SIEMENS LOGO! Brute Force Bundle
 
-![alt text](https://raw.githubusercontent.com/biero-el-corridor/LOGO_BRUTE_FORCE_BUNBLE/master/picture/nulei_result.png)
+![alt text](https://raw.githubusercontent.com/biero-el-corridor/LOGO_BRUTE_FORCE_BUNBLE/master/picture/nuclei_result.png)
 
 ![alt text](https://raw.githubusercontent.com/biero-el-corridor/LOGO_BRUTE_FORCE_BUNBLE/master/picture/LOGO_Bruteforce.png)
 
