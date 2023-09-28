@@ -1,0 +1,21 @@
+id: Detect-Siemens-LOGO!8-PLC
+
+info:
+  name: find up simeens logo! 8 web panel
+  author: biero
+  severity: low
+  
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"/logo_login.shtm?!App-Language=
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+           - 200
+           condition: and
+      - type: word
+        part: body
+            - "ReadMe OSS"
