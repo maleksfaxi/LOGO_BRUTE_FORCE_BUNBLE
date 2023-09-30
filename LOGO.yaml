@@ -2,7 +2,7 @@ id: Detect-Siemens-LOGO!8-PLC
 
 info:
   name: find up simeens logo! 8 web panel
-  author: biero
+  author: biero-el-corridor
   severity: low
   
 http:
