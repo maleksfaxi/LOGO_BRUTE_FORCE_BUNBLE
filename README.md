@@ -13,7 +13,7 @@ There is also a small pass list and a nuclei template which should do the job fo
 
 For obvious reasons I did not add the fact of being able to put a list of IPs as a parameter.
 
-For a concrete example, read [this article](https://medium.com/@biero-llagas/hunt-and-bruteforce-plc-simens-logo-225bad0088db) which explains how to use this tool in a concrete case: the discovery of LOGO! in nature, followed by the brute force of a LOGO! on LAN in my local network.
+For a concrete example, read [this article](https://medium.com/@biero-llagas/hunt-and-bruteforce-plc-simens-logo-225bad0088db) which explains how to use this tool in a concrete case: the discovery of LOGO! in the wild internet. Followed by the brute force of a LOGO! on LAN in my local network.
 
 
 ### Requirments: 
