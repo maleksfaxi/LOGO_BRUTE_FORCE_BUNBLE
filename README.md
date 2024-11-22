@@ -4,7 +4,7 @@
 ![alt text](https://raw.githubusercontent.com/biero-el-corridor/LOGO_BRUTE_FORCE_BUNBLE/master/picture/LOGO_Bruteforce.png)
 
 
-## INTRO 
+### About
 _*!!!!! This repos is for research and educational purposes only !!!!!*_
 
 This repo is based on the work of yossi-reuven. It only adds a port selection and better management of the password list (in the js file).
@@ -19,7 +19,7 @@ For a concrete example, read [this article](https://medium.com/@biero-llagas/hun
 ### Requirements: 
 - Node JS 
 - shelljs (`npm install shelljs`)   
-- nuclei
+- nuclei (check https://docs.projectdiscovery.io/tools/nuclei/install)
 - a disposable SIEMENS LOGO! 
 
 You can install everything by cloning the repository and running the following commands : 
@@ -31,6 +31,7 @@ chmod +x *.sh
 ```
 
 ### Usage: 
-`node LOGO_bf.js  <logo_ip> <port> <pass_file>`
-*no need for username as SIEMENS has static username ('Web User')
+`node LOGO_bf.js  <logo_ip> <port> <pass_file>` 
+
+Note : no need for username as SIEMENS has static username ('Web User')
 
