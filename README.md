@@ -5,7 +5,7 @@
 
 
 ## INTRO 
-_*!!!!! This repos is for research and educational purposes only*_ !!!!!
+_*!!!!! This repos is for research and educational purposes only !!!!!*_
 
 This repo is based on the work of yossi-reuven. It only adds a port selection and better management of the password list (in the js file).
 
